@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>                                                 
+<body>
+   <form onsubmit="return false">                                                                                                           
+     <label for="status">Masukkan status</label> 
+     <input type="text" id="status">
+     <label for="JLF">Jumlah potocopy</label>
+     <input type="number" id="JLF">
+     <button onclick="cek_harga()">cek harga</button>
+   </form>
+   <div id="hasil"></div>
+   <script>
+      function cek_harga() {
+     let status=document.getElementById ('status').value;
+     let JLF=document.getElementById ('JLF').value;
+     if (status="langganan") {
+      var HPP=75
+     } else{ 
+      if(JLF<100){
+      var HPP=100
+      } else {
+         var HPP=85
+      }
+     }
+     let TH=JLF*HPP
+     document.getElementById('hasil').innerHTML=TH
+
+     }
+      
+   </script>
+</body>
+</html>
